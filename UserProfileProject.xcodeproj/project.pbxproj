@@ -11,6 +11,11 @@
 		A5FCEF3E2BA9D6BB00620035 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FCEF3D2BA9D6BB00620035 /* ContentView.swift */; };
 		A5FCEF402BA9D6BC00620035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FCEF3F2BA9D6BC00620035 /* Assets.xcassets */; };
 		A5FCEF432BA9D6BC00620035 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FCEF422BA9D6BC00620035 /* Preview Assets.xcassets */; };
+		A5FCEF4C2BA9D7DD00620035 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FCEF4B2BA9D7DC00620035 /* UserProfile.swift */; };
+		A5FCEF4F2BA9D81F00620035 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FCEF4E2BA9D81F00620035 /* ProfileView.swift */; };
+		A5FCEF522BA9D85F00620035 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FCEF512BA9D85F00620035 /* ImagePicker.swift */; };
+		A5FCEF572BA9DB0D00620035 /* UserProfile+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FCEF562BA9DB0D00620035 /* UserProfile+UserDefaults.swift */; };
+		A5FCEF592BA9DB6500620035 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FCEF582BA9DB6500620035 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		A5FCEF3D2BA9D6BB00620035 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5FCEF3F2BA9D6BC00620035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5FCEF422BA9D6BC00620035 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A5FCEF4B2BA9D7DC00620035 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		A5FCEF4E2BA9D81F00620035 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A5FCEF512BA9D85F00620035 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A5FCEF562BA9DB0D00620035 /* UserProfile+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+UserDefaults.swift"; sourceTree = "<group>"; };
+		A5FCEF582BA9DB6500620035 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,10 @@
 		A5FCEF3A2BA9D6BB00620035 /* UserProfileProject */ = {
 			isa = PBXGroup;
 			children = (
+				A5FCEF552BA9DAED00620035 /* Extensions */,
+				A5FCEF502BA9D84D00620035 /* Infrastructure */,
+				A5FCEF4D2BA9D81000620035 /* View */,
+				A5FCEF4A2BA9D7CA00620035 /* Models */,
 				A5FCEF3B2BA9D6BB00620035 /* UserProfileProjectApp.swift */,
 				A5FCEF3D2BA9D6BB00620035 /* ContentView.swift */,
 				A5FCEF3F2BA9D6BC00620035 /* Assets.xcassets */,
@@ -65,6 +79,39 @@
 				A5FCEF422BA9D6BC00620035 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A5FCEF4A2BA9D7CA00620035 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5FCEF4B2BA9D7DC00620035 /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5FCEF4D2BA9D81000620035 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5FCEF4E2BA9D81F00620035 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5FCEF502BA9D84D00620035 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				A5FCEF512BA9D85F00620035 /* ImagePicker.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		A5FCEF552BA9DAED00620035 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5FCEF562BA9DB0D00620035 /* UserProfile+UserDefaults.swift */,
+				A5FCEF582BA9DB6500620035 /* ViewExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FCEF4F2BA9D81F00620035 /* ProfileView.swift in Sources */,
+				A5FCEF592BA9DB6500620035 /* ViewExtensions.swift in Sources */,
 				A5FCEF3E2BA9D6BB00620035 /* ContentView.swift in Sources */,
+				A5FCEF522BA9D85F00620035 /* ImagePicker.swift in Sources */,
+				A5FCEF572BA9DB0D00620035 /* UserProfile+UserDefaults.swift in Sources */,
 				A5FCEF3C2BA9D6BB00620035 /* UserProfileProjectApp.swift in Sources */,
+				A5FCEF4C2BA9D7DD00620035 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +327,8 @@
 				DEVELOPMENT_TEAM = H356ZRQJW7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Приложению требуется доступ к вашей камере.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Приложению требуется доступ к вашим фотографиям.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +358,8 @@
 				DEVELOPMENT_TEAM = H356ZRQJW7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Приложению требуется доступ к вашей камере.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Приложению требуется доступ к вашим фотографиям.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

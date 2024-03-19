@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct UserProfileProjectApp: App {
+struct UserProfileApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
         }
     }
 }

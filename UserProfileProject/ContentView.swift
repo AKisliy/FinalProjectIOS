@@ -7,15 +7,18 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var isProfilePresented = false
+    @State private var userProfile: UserProfile = UserProfile.loadFromUserDefaults() ?? UserProfile()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Button("Открыть профиль") {
+            isProfilePresented = true
         }
-        .padding()
+        .sheet(isPresented: $isProfilePresented) {
+            ProfileView(userProfile: UserProfile.loadFromUserDefaults() ?? UserProfile(), isPresented: $isProfilePresented)
+        }
     }
 }
 
