@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+// структура для загрузки выбранных в галереи/камере фотографий
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     @Binding var image: UIImage?

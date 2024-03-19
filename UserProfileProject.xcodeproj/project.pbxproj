@@ -66,7 +66,6 @@
 				A5FCEF4D2BA9D81000620035 /* View */,
 				A5FCEF4A2BA9D7CA00620035 /* Models */,
 				A5FCEF3B2BA9D6BB00620035 /* UserProfileProjectApp.swift */,
-				A5FCEF3D2BA9D6BB00620035 /* ContentView.swift */,
 				A5FCEF3F2BA9D6BC00620035 /* Assets.xcassets */,
 				A5FCEF412BA9D6BC00620035 /* Preview Content */,
 			);
@@ -92,6 +91,7 @@
 		A5FCEF4D2BA9D81000620035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A5FCEF3D2BA9D6BB00620035 /* ContentView.swift */,
 				A5FCEF4E2BA9D81F00620035 /* ProfileView.swift */,
 			);
 			path = View;

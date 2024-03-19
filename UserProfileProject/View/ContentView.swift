@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isProfilePresented = false
-    @State private var userProfile: UserProfile = UserProfile.loadFromUserDefaults() ?? UserProfile()
 
     var body: some View {
         Button("Открыть профиль") {

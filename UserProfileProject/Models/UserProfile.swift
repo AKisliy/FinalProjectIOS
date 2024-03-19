@@ -9,7 +9,7 @@ import SwiftUI
 struct UserProfile: Codable {
     var firstName: String = ""
     var lastName: String = ""
-    var patronymic: String? // Отчество может быть не указано
+    var patronymic: String = ""
     var nickname: String = ""
     var email: String = ""
     var phone: String = ""

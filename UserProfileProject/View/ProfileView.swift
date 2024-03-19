@@ -10,8 +10,6 @@ struct ProfileView: View {
     @State var userProfile: UserProfile
     @Binding var isPresented: Bool
     
-    @State private var tempPatronymic: String = ""
-    
     @State private var showingImagePicker = false
     @State private var showingActionSheet = false
     @State private var imageSource: UIImagePickerController.SourceType = .photoLibrary
@@ -31,25 +29,26 @@ struct ProfileView: View {
             Form {
                 Section(header: Text("Фото профиля")) {
                     // Отображение фото профиля или аватара по умолчанию
-                    (image?.resizable().scaledToFit() ?? Image(systemName: "person.crop.circle.fill").resizable().scaledToFit())
+                    (image?.resizable().scaledToFit() ?? Image(systemName: "person.crop.circle.fill")
+                        .resizable()
+                        .scaledToFit())
                         .onTapGesture {
                             showingActionSheet = true
                         }
                 }
-                
+                // Секция с полями ввода
                 Section(header: Text("Информация")) {
                     TextField("Фамилия", text: $userProfile.lastName)
                     TextField("Имя", text: $userProfile.firstName)
-                    TextField("Отчество", text: $tempPatronymic)
+                    TextField("Отчество", text: $userProfile.patronymic)
                     TextField("Никнейм", text: $userProfile.nickname)
                     TextField("Email", text: $userProfile.email)
                     TextField("Телефон", text: $userProfile.phone)
                     TextField("Телеграм", text: $userProfile.telegram)
                 }
-                                
+                // кнопки
                 Section {
                     Button("Сохранить"){
-                        userProfile.patronymic = tempPatronymic.isEmpty ? nil : tempPatronymic
                         userProfile.saveToUserDefaults()
                         isPresented = false
                     }
@@ -62,6 +61,7 @@ struct ProfileView: View {
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: $inputImage, sourceType: imageSource)
             }
+            // actionSheet для выбора способа добавления фото
             .actionSheet(isPresented: $showingActionSheet) {
                 ActionSheet(title: Text("Выберите источник фото"), message: nil, buttons: [
                     .default(Text("Камера")) {
@@ -86,7 +86,8 @@ struct ProfileView: View {
         image = Image(uiImage: inputImage)
         
         if let imageUrl = saveImageToFileSystem(inputImage) {
-            userProfile.photoURL = imageUrl.lastPathComponent // Сохраняем путь к изображению в профиле
+            // Сохраняем относительный путь к изображению в профиле
+            userProfile.photoURL = imageUrl.lastPathComponent
         }
     }
     
@@ -107,6 +108,7 @@ struct ProfileView: View {
     }
     
     func loadImageFromUserProfile() {
+        // загружаем фото, соединив относительный и абсолютный пути
         if let relativePath = userProfile.photoURL{
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let fullPath = documentsDirectory.appendingPathComponent(relativePath)
